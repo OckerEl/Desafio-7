@@ -27,9 +27,15 @@ public class drivetrain extends SubsystemBase {
 
   public void tankDrive(double leftVel, double rightVel)
   {
+    leftMaster.set(0.6);
+    rightMaster.set(0.6);
+  }
+/*
+  public void tankDrive(double leftVel, double rightVel)
+  {
     diffDrive.tankDrive(leftVel, rightVel);
   }
-
+*/
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
