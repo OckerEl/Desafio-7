@@ -31,7 +31,7 @@ public class irFrente extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.tankDrive(1, 1);
+    drivetrain.tankDrive(0.6, 0.6);
   }
 
   // Called once the command ends or is interrupted.
