@@ -1,12 +1,11 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
+// O comando abaixo tá pegando todos os subsystems do robô.
 package frc.robot.subsystems;
 
+// O comando tá importando todos os motores que o robô usa.
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+// Os comandos abaixo tá 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -21,14 +20,18 @@ public class drivetrain extends SubsystemBase {
 
   /** Creates a new drivetrain. */
   public drivetrain() {
+
+    rightMaster.isInverted(true);
+    rightSlave.isInverted(true);
+    
     leftSlave.follow(leftMaster);
     rightSlave.follow(rightMaster);
   }
 
   public void tankDrive(double leftVel, double rightVel)
   {
-    leftMaster.set(0.6);
-    rightMaster.set(0.6);
+    leftMaster.set(leftVel);
+    rightMaster.set(rightVel);
   }
 /*
   public void tankDrive(double leftVel, double rightVel)
